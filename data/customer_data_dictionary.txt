@@ -1,0 +1,57 @@
+Customer Data Dictionary — Reference Document
+=============================================
+
+This document describes the fields used in the customer database.
+
+CUSTOMER IDENTIFIERS
+--------------------
+customer_id: A unique alphanumeric identifier assigned to each customer at registration.
+Format: C followed by 3 digits (e.g. C001). This is the primary key across all systems.
+Never reused after account deletion.
+
+PERSONAL INFORMATION
+--------------------
+first_name, last_name: Customer's legal name as provided at signup. 
+Not validated against government ID. May contain Unicode characters for international customers.
+
+email: Primary contact email. Must be unique across all accounts. Used for login and notifications.
+Some enterprise accounts may have no email if SSO is configured (nullable).
+
+phone: International format with country code. Used for 2FA and support contact.
+Format varies by country. Not guaranteed to be unique (family plans may share a number).
+
+date_of_birth: Used for age verification and GDPR compliance. 
+Customers must be 18+ to hold a premium or enterprise plan.
+Format: YYYY-MM-DD. PII field — handle with care.
+
+ACCOUNT INFORMATION
+-------------------
+signup_date: UTC date when the account was created. Immutable after creation.
+
+last_login: UTC datetime of the most recent authenticated session.
+Null if the customer has never logged in after email verification.
+
+is_active: Boolean flag. False means account is suspended or voluntarily deactivated.
+Inactive accounts retain data for 90 days before purging per GDPR policy.
+
+country: ISO 3166-1 alpha-2 or full country name. Determines applicable tax rates
+and data residency requirements (EU vs non-EU).
+
+SUBSCRIPTION AND BILLING
+-------------------------
+subscription_plan: One of four tiers:
+  - basic      ($9.99/month)  — limited to 3 users, 10GB storage
+  - standard   ($49.99/month) — up to 10 users, 100GB storage
+  - premium    ($149.99/month)— up to 50 users, 1TB storage
+  - enterprise ($499.99/month)— unlimited users, dedicated support
+
+monthly_spend: Actual billed amount in USD for the current billing cycle.
+May differ from plan price due to add-ons, discounts, or proration.
+Enterprise customers may have custom pricing — treat as sensitive financial data.
+
+DATA QUALITY NOTES
+------------------
+- email is nullable for enterprise SSO accounts (about 2% of accounts)
+- phone numbers are not standardized — some include dashes, spaces, or parentheses
+- country field was added in 2020; records before that may have NULL country
+- is_active was backfilled in 2021 — all pre-2021 records default to true

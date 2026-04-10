@@ -1,0 +1,11 @@
+customer_id,first_name,last_name,email,phone,date_of_birth,signup_date,country,subscription_plan,monthly_spend,is_active,last_login
+C001,Alice,Johnson,alice.j@email.com,+1-555-0101,1985-03-12,2021-06-15,USA,premium,149.99,true,2024-11-01
+C002,Bob,Smith,bob.smith@email.com,+1-555-0202,1990-07-24,2022-01-03,USA,basic,9.99,true,2024-11-02
+C003,Carmen,Rodriguez,c.rod@mail.com,+34-600-123456,1978-11-30,2020-09-20,Spain,premium,149.99,true,2024-10-28
+C004,David,Lee,d.lee@corp.com,+44-7911-123456,1995-02-18,2023-03-11,UK,standard,49.99,true,2024-11-03
+C005,Eva,Müller,eva.m@web.de,+49-151-12345678,1988-08-05,2021-11-22,Germany,basic,9.99,false,2024-08-14
+C006,Frank,Nguyen,frank.n@email.com,+1-555-0303,2000-01-15,2023-07-07,USA,standard,49.99,true,2024-11-01
+C007,Grace,Kim,g.kim@mail.kr,+82-10-1234-5678,1993-05-27,2022-04-18,South Korea,premium,149.99,true,2024-11-02
+C008,Hiro,Tanaka,,+81-90-1234-5678,1975-12-09,2019-02-28,Japan,enterprise,499.99,true,2024-10-30
+C009,Isabelle,Dupont,i.dupont@fr.com,+33-6-12345678,1982-04-14,2020-12-01,France,standard,49.99,false,2024-07-22
+C010,James,O'Brien,james.ob@ie.com,+353-87-1234567,1997-09-03,2023-10-15,Ireland,basic,9.99,true,2024-11-03

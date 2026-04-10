@@ -1,0 +1,164 @@
+{
+  "dataset": "sample_customers.csv",
+  "columns": [
+    {
+      "name": "customer_id",
+      "description": "Unique identifier assigned to each customer at registration.",
+      "logical_type": "identifier",
+      "nullable": false,
+      "example_values": [
+        "C001",
+        "C002",
+        "C003"
+      ],
+      "business_rules": "Never reused after account deletion.",
+      "quality_notes": "null identified",
+      "tags": []
+    },
+    {
+      "name": "first_name",
+      "description": "Customer's legal name as provided at signup.",
+      "logical_type": "string",
+      "nullable": false,
+      "example_values": [
+        "Alice",
+        "Bob",
+        "Carmen"
+      ],
+      "business_rules": "Not validated against government ID. May contain Unicode characters for international customers.",
+      "quality_notes": "null identified",
+      "tags": []
+    },
+    {
+      "name": "last_name",
+      "description": "Customer's legal name as provided at signup.",
+      "logical_type": "string",
+      "nullable": false,
+      "example_values": [
+        "Johnson",
+        "Smith",
+        "Rodriguez"
+      ],
+      "business_rules": "Not validated against government ID. May contain Unicode characters for international customers.",
+      "quality_notes": "null identified",
+      "tags": []
+    },
+    {
+      "name": "email",
+      "description": "Primary contact email used for login and notifications.",
+      "logical_type": "string",
+      "nullable": true,
+      "example_values": [
+        "alice.j@email.com",
+        "bob.smith@email.com"
+      ],
+      "business_rules": "Must be unique across all accounts. Some enterprise accounts may have no email if SSO is configured (nullable).",
+      "quality_notes": "Email is nullable for enterprise SSO accounts (about 2% of accounts)",
+      "tags": []
+    },
+    {
+      "name": "phone",
+      "description": "International format with country code used for 2FA and support contact.",
+      "logical_type": "string",
+      "nullable": false,
+      "example_values": [
+        "+1-555-0101",
+        "+34-600-123456"
+      ],
+      "business_rules": "Format varies by country. Not guaranteed to be unique (family plans may share a number).",
+      "quality_notes": "Phone numbers are not standardized — some include dashes, spaces, or parentheses",
+      "tags": []
+    },
+    {
+      "name": "date_of_birth",
+      "description": "Customer's date of birth.",
+      "logical_type": "datetime",
+      "nullable": false,
+      "example_values": [
+        "1985-03-12",
+        "1990-07-24"
+      ],
+      "business_rules": "null identified",
+      "quality_notes": "null identified",
+      "tags": []
+    },
+    {
+      "name": "signup_date",
+      "description": "Date of customer's signup.",
+      "logical_type": "datetime",
+      "nullable": false,
+      "example_values": [
+        "2021-06-15",
+        "2022-01-03"
+      ],
+      "business_rules": "null identified",
+      "quality_notes": "null identified",
+      "tags": []
+    },
+    {
+      "name": "country",
+      "description": "Customer's country of residence.",
+      "logical_type": "string",
+      "nullable": false,
+      "example_values": [
+        "USA",
+        "Spain"
+      ],
+      "business_rules": "Country field was added in 2020; records before that may have NULL country",
+      "quality_notes": "null identified",
+      "tags": []
+    },
+    {
+      "name": "subscription_plan",
+      "description": "Customer's subscription plan.",
+      "logical_type": "string",
+      "nullable": false,
+      "example_values": [
+        "premium",
+        "basic"
+      ],
+      "business_rules": "null identified",
+      "quality_notes": "null identified",
+      "tags": []
+    },
+    {
+      "name": "monthly_spend",
+      "description": "Actual billed amount in USD for the current billing cycle.",
+      "logical_type": "decimal",
+      "nullable": false,
+      "example_values": [
+        149.99,
+        9.99
+      ],
+      "business_rules": "May differ from plan price due to add-ons, discounts, or proration. Enterprise customers may have custom pricing — treat as sensitive financial data.",
+      "quality_notes": "null identified",
+      "tags": []
+    },
+    {
+      "name": "is_active",
+      "description": "Indicates whether the customer's account is active.",
+      "logical_type": "boolean",
+      "nullable": false,
+      "example_values": [
+        true,
+        false
+      ],
+      "business_rules": "null identified",
+      "quality_notes": "null identified",
+      "tags": []
+    },
+    {
+      "name": "last_login",
+      "description": "Date of the customer's last login.",
+      "logical_type": "datetime",
+      "nullable": false,
+      "example_values": [
+        "2024-11-01",
+        "2024-07-22"
+      ],
+      "business_rules": "null identified",
+      "quality_notes": "null identified",
+      "tags": []
+    }
+  ]
+}
