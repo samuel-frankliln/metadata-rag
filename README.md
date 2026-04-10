@@ -2,6 +2,7 @@
 
 Generate structured metadata for your datasets using **local LLMs via Ollama**.
 No data ever leaves your machine.
+<img width="2528" height="1319" alt="image" src="https://github.com/user-attachments/assets/9405c278-b4fe-4b4b-ba80-9b480edc8fe8" />
 
 ---
 
